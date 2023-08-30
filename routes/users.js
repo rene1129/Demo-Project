@@ -15,12 +15,15 @@ router.get('/new', (req, res) => {
 
 //create hero route
 router.post('/', async(req, res) => {
-    const { name } = req.body;
+    const { name, secretIdentity, age, strenghtLevel } = req.body;
 try {
     const newUser = User.create({
        name,
+       secretIdentity,
+       age,
+       strenghtLevel
     });
-    console.log(name);
+    res.redirect('/')
     res.status(200).send(JSON.stringify(newUser));
 } catch (error) {
     res.status(400).send('an error occurred');
