@@ -3,7 +3,7 @@ const app = express()
 const expressLayouts = require('express-ejs-layouts')
 const mongoose = require('mongoose')
 const User = require('./models/userModel')
-
+const path = require('path');
 
 const indexRouter = require('./routes/index')
 const userRouter = require('./routes/users')
@@ -19,6 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/', indexRouter)
 app.use('/users', userRouter)
+app.use(express.static(path.join(__dirname, 'public')));
 
 mongoose.connect('mongodb+srv://dbuser:Password1!@cluster0.p7klgl3.mongodb.net/Clients')
 .then(() => {
