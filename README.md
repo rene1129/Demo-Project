@@ -1,0 +1,1 @@
+The plan was to have a Website in which users could input the info of any hero to store it into their collection, therefore having a digital way to showcase the collection a user has, and being able to search through all the heroes that user has stored to find a specific one
